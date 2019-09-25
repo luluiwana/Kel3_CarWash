@@ -101,8 +101,36 @@ class Home extends CI_Controller {
 	'jenis_kendaraan' => $this->input->post('jenis_kendaraan'),
 	'no_plat' => $this->input->post('no_plat')
 	);
+	
+	$email = $data['email'];
+	
+	$qdatang=$this->db->query("SELECT COUNT(*) as jml FROM riwayat WHERE email='$email'");
+	foreach($qdatang->result() as $row){
+		$jml=$row->jml;
+	}
 
+	if($jml==1){
+		$query=$this->db->query("SELECT DATEDIFF(CURRENT_DATE, waktu_datang) AS days FROM riwayat WHERE email='saya' ORDER BY id_history DESC LIMIT 1 ");
+		foreach($query->result() as $row){
+			$selisih = $row->days;
+		}
+		$this->db->query("UPDATE customer SET periode=$selisih WHERE email='$email'");
+	}
+	elseif($jml>1){
+		$query=$this->db->query("SELECT DATEDIFF(CURRENT_DATE, waktu_datang) AS days FROM riwayat WHERE email='$email' ORDER BY id_history DESC LIMIT 1 ");
+		foreach($query->result() as $row){
+			$selisih = $row->days;
+		}
+		$query=$this->db->query("SELECT * FROM customer WHERE email='$email' ");
+		foreach($query->result() as $row){
+			$periode = $row->periode;
+		}
+		$ramal = ($periode+$selisih)/2;
+		$this->db->query("UPDATE customer SET periode=$ramal WHERE email='$email'");
+	}
+	//$this->db->query("UPDATE customer SET periode=6 WHERE email='$email'");
 	$this->db->insert('riwayat', $data);
+	
 	
 	redirect('http://localhost/catwash/home/riwayat');
 	}

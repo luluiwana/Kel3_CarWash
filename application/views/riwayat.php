@@ -102,7 +102,7 @@
 					</tr>
 					
 					<?php
-					$query = $this->db->query("SELECT * FROM `riwayat` INNER JOIN customer ON riwayat.email=customer.email INNER JOIN paket ON paket.nama_paket=riwayat.paket order by waktu_datang desc");
+					$query = $this->db->query("SELECT * FROM `riwayat` INNER JOIN customer ON riwayat.email=customer.email INNER JOIN paket ON paket.nama_paket=riwayat.paket order by id_history desc");
 					
 					foreach($query->result() as $row){
 					?>
