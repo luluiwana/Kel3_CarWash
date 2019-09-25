@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 25, 2019 at 05:13 AM
+-- Generation Time: Sep 25, 2019 at 06:38 AM
 -- Server version: 10.3.15-MariaDB
 -- PHP Version: 7.3.6
 
@@ -53,25 +53,57 @@ INSERT INTO `customer` (`email`, `password`, `nama`, `alamat`, `gender`, `tangga
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `paket`
+--
+
+CREATE TABLE `paket` (
+  `nama_paket` varchar(100) NOT NULL,
+  `harga` int(5) NOT NULL,
+  `estimasi` varchar(5) NOT NULL,
+  `deskripsi` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `paket`
+--
+
+INSERT INTO `paket` (`nama_paket`, `harga`, `estimasi`, `deskripsi`) VALUES
+('Cuci Manual', 50000, '40', 'Mencuci kendaraan dengan menggunakan alat semprot air yang berkekuatan 1 PK, dengan tarif Rp 50 Ribu maka konsumen sudah mendapatkan pelayanan terbaik diantaranya mendapatkan Snow Wash, semir, vakum interior, dan juga dapat karpet kertas. '),
+('Cuci Hidrolik', 100000, '30', 'Proses mencuci kendaraan menggunakan hidrolik. Ada hidrolik yang khusus untuk motor dan ada juga khusus untuk mobil, menggunakan alat hidrolik ini proses pencucian biasanya lebih cepat, karena petugasnyapun sangat terbantu dengan alat tersebut. Termasuk sudah difasilitasi seperti vakum Interior, semir ban dan cuci mesin. '),
+('Mesin Otomatis', 160000, '20', 'Mencuci kendaraan menggunakan mesin otomatis bisa menjadi pilihan baru, seiring dengan perkembangan teknologi dibuatlah alat dengan sedemikian rupa sehingga bermanfaat, biasaya Konsumen akan mendapatkan perlindungan cat yang dilakukan secara manual oleh petugas, dan juga pembersihan interior vakum. '),
+('Tenaga Robot', 250000, '10', 'Dalam proses cucian mobil menggunakan robot, si pemilik kendaraan tidak perlu keluar dari mobilnya, cukup di tutup rapat seluruh kaca mobil dan menunggu sampai bersih. Jika bagian dalam mobil ingin di bersihkan juga, maka pemilik kendaraan keluar dari mobilnya. Keunggulan mencuci pakai robot yaitu lebih cepat sehingga menghemat waktu . ');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `riwayat`
 --
 
 CREATE TABLE `riwayat` (
-  `nama_paket` varchar(100) NOT NULL,
-  `harga` int(5) NOT NULL,
-  `estmasi` varchar(5) NOT NULL,
-  `deskripsi` text NOT NULL
+  `id_history` int(3) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `paket` varchar(50) NOT NULL,
+  `jenis_kendaraan` enum('Mobil','Motor') NOT NULL,
+  `no_plat` char(10) NOT NULL,
+  `waktu_datang` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `riwayat`
 --
 
-INSERT INTO `riwayat` (`nama_paket`, `harga`, `estmasi`, `deskripsi`) VALUES
-('Cuci Manual', 50000, '40', 'Mencuci kendaraan dengan menggunakan alat semprot air yang berkekuatan 1 PK, dengan tarif Rp 50 Ribu maka konsumen sudah mendapatkan pelayanan terbaik diantaranya mendapatkan Snow Wash, semir, vakum interior, dan juga dapat karpet kertas. '),
-('Cuci Hidrolik', 100000, '30', 'Proses mencuci kendaraan menggunakan hidrolik. Ada hidrolik yang khusus untuk motor dan ada juga khusus untuk mobil, menggunakan alat hidrolik ini proses pencucian biasanya lebih cepat, karena petugasnyapun sangat terbantu dengan alat tersebut. Termasuk sudah difasilitasi seperti vakum Interior, semir ban dan cuci mesin. '),
-('Mesin Otomatis', 160000, '20', 'Mencuci kendaraan menggunakan mesin otomatis bisa menjadi pilihan baru, seiring dengan perkembangan teknologi dibuatlah alat dengan sedemikian rupa sehingga bermanfaat, biasaya Konsumen akan mendapatkan perlindungan cat yang dilakukan secara manual oleh petugas, dan juga pembersihan interior vakum. '),
-('Tenaga Robot', 250000, '10', 'Dalam proses cucian mobil menggunakan robot, si pemilik kendaraan tidak perlu keluar dari mobilnya, cukup di tutup rapat seluruh kaca mobil dan menunggu sampai bersih. Jika bagian dalam mobil ingin di bersihkan juga, maka pemilik kendaraan keluar dari mobilnya. Keunggulan mencuci pakai robot yaitu lebih cepat sehingga menghemat waktu . ');
+INSERT INTO `riwayat` (`id_history`, `email`, `paket`, `jenis_kendaraan`, `no_plat`, `waktu_datang`) VALUES
+(1, 'lulu@email.com', 'Cuci Hidrolik', 'Mobil', 'js878', '2019-09-25 04:01:55'),
+(2, 'lulu@email.com', 'Cuci Hidrolik', 'Mobil', 'js878', '2019-09-25 04:05:03'),
+(3, 'lulu@email.com', 'Cuci Hidrolik', 'Mobil', 'js878', '2019-09-25 04:05:31'),
+(4, 'lulu@email.com', 'Cuci Hidrolik', 'Mobil', 'js878', '2019-09-25 04:12:51'),
+(5, 'lulu@email.com', 'Cuci Hidrolik', 'Mobil', 'js878', '2019-09-25 04:13:03'),
+(6, 'lulu@email.com', 'Cuci Hidrolik', 'Mobil', 'js878', '2019-09-25 04:20:09'),
+(7, 'lulukiw@gmail.com', 'Tenaga Robot', '', 'ds', '2019-09-25 04:22:30'),
+(8, 'lulukiw@gmail.com', 'Tenaga Robot', '', 'ds', '2019-09-25 04:22:57'),
+(9, 'lulu@email.com', 'Cuci Manual', '', 'k8867j', '2019-09-25 04:26:49'),
+(10, 'email', 'Mesin otomatis', '', 'kj 98987 h', '2019-09-25 04:29:52'),
+(11, 'lulu@email.com', 'Tenaga Robot', 'Motor', 'lkji 7867t', '2019-09-25 04:30:30');
 
 --
 -- Indexes for dumped tables
@@ -82,6 +114,22 @@ INSERT INTO `riwayat` (`nama_paket`, `harga`, `estmasi`, `deskripsi`) VALUES
 --
 ALTER TABLE `customer`
   ADD PRIMARY KEY (`email`);
+
+--
+-- Indexes for table `riwayat`
+--
+ALTER TABLE `riwayat`
+  ADD PRIMARY KEY (`id_history`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `riwayat`
+--
+ALTER TABLE `riwayat`
+  MODIFY `id_history` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
