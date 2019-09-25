@@ -158,5 +158,15 @@ class Home extends CI_Controller {
 
 	}
 	
+	public function faq(){
+		if($this->session->userdata('email_sesi')=="adminku"){
+		$this->load->view('headeradmin');
+	}
+	else{
+		$this->load->view('header');
+	}
+	$this->load->view('faq');
+	}
+	
 	
 }

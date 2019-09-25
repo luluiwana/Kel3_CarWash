@@ -230,7 +230,7 @@
         <div class="row">
           <div class="span4">
             <div class="logo">
-              <a href="index.html"><big><b>C A T W A S H - CARWASH</b></big></a>
+              <a href="http://localhost/catwash/"><big><b>C A T W A S H - CARWASH</b></big></a>
               <h1>Solusi kendaraan bersih Anda</h1>
             </div>
           </div>
@@ -256,7 +256,7 @@
                       
                     </li>
                     <li class="dropdown">
-                      <a href="#">FAQ<i ></i></a>
+                      <a href="http://localhost/catwash/home/faq">FAQ<i ></i></a>
                     </li>
 					<!--
                     <li class="dropdown">
