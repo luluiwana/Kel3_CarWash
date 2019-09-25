@@ -94,6 +94,18 @@ class Home extends CI_Controller {
 		$this->load->view('chat');
 
 	}
+	public function add(){
+	 $data = array(
+	'email' => $this->input->post('email'),
+	'paket' => $this->input->post('paket'),
+	'jenis_kendaraan' => $this->input->post('jenis_kendaraan'),
+	'no_plat' => $this->input->post('no_plat')
+	);
+
+	$this->db->insert('riwayat', $data);
+	
+	redirect('http://localhost/catwash/home/riwayat');
+	}
 	
 	public function profil()
 	{

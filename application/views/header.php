@@ -132,7 +132,11 @@
 				  <div class="control-group">
                     <label class="control-label" for="inputEmail">Jenis Kelamin</label>
                     <div class="controls">
-                      <input type="text" id="inputEmail" required name="gender" placeholder="Pria/Wanita">
+                      <select name="gender" required>
+					  <option>--gender--</option>
+					  <option value="Pria">Pria</option>
+					  <option value="Wanita">Wanita</option>
+                      </select>
                     </div>
                   </div>
 				  <div class="control-group">
