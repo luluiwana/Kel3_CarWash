@@ -19,7 +19,12 @@
                   <p>
                     Lorem ipsum dolor sit amet nsectetuer nec Vivamus. Curabitu laoreet amet eget. Viurab oremd ellentesque ameteget. Lorem ipsum dolor sit amet nsectetuer nec vivamus.
                   </p>
-                  <a href="#" class="btn btn-theme">Daftar Sekarang</a>
+				  <?php 
+					if(!$this->session->userdata('email_sesi')){
+						echo "<a href='#' class='btn btn-theme'>Daftar Sekarang</a>";
+					}
+				  ?>
+                  
                 </div>
               </div>
               
@@ -34,12 +39,43 @@
         <div class="row">
           <div class="span12">
             <div class="big-cta">
+			<?php 
+					if(!$this->session->userdata('email_sesi')){
+						
+					
+				  ?>
               <div class="cta-text">
+			  
                 <h3>Daftar sekarang dan dapatkan promo menarik <span class="highlight"><strong>Catwash</strong></span> sekarang juga!</h3>
               </div>
               <div class="cta floatright">
                 <a class="btn btn-large btn-theme btn-rounded" href="#">Daftar Sekarang</a>
               </div>
+			  <?php }elseif($this->session->userdata('email_sesi')!='adminku'){?>
+			  
+			  <?php 
+			  
+				 $email = $this->session->userdata('email_sesi');
+				$Qperiode=$this->db->query("SELECT * FROM customer where email='$email'");
+				foreach($Qperiode->result() as $row){
+					$periode=$row->periode;
+				}
+				
+				$Qwaktu = $this->db->query("SELECT * FROM riwayat where email='$email' order by id_history desc limit 1");
+				foreach($Qwaktu->result() as $row){
+					$waktu=$row->waktu_datang;
+					
+					$date=date_create($waktu);
+					date_add($date,date_interval_create_from_date_string("$periode days"));
+				
+				
+				
+				  ?>
+              <div class="cta-text">
+			  
+                <h3>Anda mencuci kendaraan setiap <?php echo $periode?> hari sekali. Jangan lupa kunjungi Catwash kami pada  <span class="highlight"><strong><?php echo date('d F Y', strtotime(date_format($date,"Y-m-d"))); ?></strong></span> untuk menjaga kendaraan tetap bersih!</h3>
+              </div>
+			  <?php }}?>
             </div>
           </div>
         </div>
