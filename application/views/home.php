@@ -143,10 +143,13 @@
 				
 				  ?>
               <div class="cta-text">
-			  
+			  <?php if($periode==0){
+				  echo "<h3>Anda belum pernah mencuci kendaraan Anda. Jangan lupa mencuci kendaraan Anda di Catwash Carwash";
+			  }
+			  else{?>
                 <h3>Anda mencuci kendaraan setiap <?php echo $periode?> hari sekali. Jangan lupa kunjungi Catwash kami pada  <span class="highlight"><strong><?php echo date('d F Y', strtotime(date_format($date,"Y-m-d"))); ?></strong></span> untuk menjaga kendaraan tetap bersih!</h3>
               </div>
-			  <?php }}?>
+			  <?php }}}?>
             </div>
           </div>
         </div>
