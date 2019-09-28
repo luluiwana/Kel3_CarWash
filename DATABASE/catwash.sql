@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.8.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 25, 2019 at 06:38 AM
--- Server version: 10.3.15-MariaDB
--- PHP Version: 7.3.6
+-- Waktu pembuatan: 28 Sep 2019 pada 11.37
+-- Versi server: 10.1.32-MariaDB
+-- Versi PHP: 7.2.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,29 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `customer`
+-- Struktur dari tabel `chatting`
+--
+
+CREATE TABLE `chatting` (
+  `chat_id` int(10) NOT NULL,
+  `user_id` int(10) NOT NULL,
+  `pesan` text NOT NULL,
+  `waktu` text NOT NULL,
+  `status` enum('1','2') NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `chatting`
+--
+
+INSERT INTO `chatting` (`chat_id`, `user_id`, `pesan`, `waktu`, `status`) VALUES
+(123, 123, 'asdasdasdsda', '11:36', '1'),
+(123, 123, 'sdasadasdasd', '11:36', '1');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `customer`
 --
 
 CREATE TABLE `customer` (
@@ -36,11 +58,11 @@ CREATE TABLE `customer` (
   `gender` enum('Pria','Wanita') NOT NULL,
   `tanggal_lahir` date NOT NULL,
   `no_hp` varchar(15) NOT NULL,
-  `periode` int(5) NOT NULL DEFAULT 0
+  `periode` int(5) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `customer`
+-- Dumping data untuk tabel `customer`
 --
 
 INSERT INTO `customer` (`email`, `password`, `nama`, `alamat`, `gender`, `tanggal_lahir`, `no_hp`, `periode`) VALUES
@@ -53,7 +75,7 @@ INSERT INTO `customer` (`email`, `password`, `nama`, `alamat`, `gender`, `tangga
 -- --------------------------------------------------------
 
 --
--- Table structure for table `paket`
+-- Struktur dari tabel `paket`
 --
 
 CREATE TABLE `paket` (
@@ -64,7 +86,7 @@ CREATE TABLE `paket` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `paket`
+-- Dumping data untuk tabel `paket`
 --
 
 INSERT INTO `paket` (`nama_paket`, `harga`, `estimasi`, `deskripsi`) VALUES
@@ -76,7 +98,7 @@ INSERT INTO `paket` (`nama_paket`, `harga`, `estimasi`, `deskripsi`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `riwayat`
+-- Struktur dari tabel `riwayat`
 --
 
 CREATE TABLE `riwayat` (
@@ -85,11 +107,11 @@ CREATE TABLE `riwayat` (
   `paket` varchar(50) NOT NULL,
   `jenis_kendaraan` enum('Mobil','Motor') NOT NULL,
   `no_plat` char(10) NOT NULL,
-  `waktu_datang` timestamp NOT NULL DEFAULT current_timestamp()
+  `waktu_datang` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `riwayat`
+-- Dumping data untuk tabel `riwayat`
 --
 
 INSERT INTO `riwayat` (`id_history`, `email`, `paket`, `jenis_kendaraan`, `no_plat`, `waktu_datang`) VALUES
@@ -110,23 +132,23 @@ INSERT INTO `riwayat` (`id_history`, `email`, `paket`, `jenis_kendaraan`, `no_pl
 --
 
 --
--- Indexes for table `customer`
+-- Indeks untuk tabel `customer`
 --
 ALTER TABLE `customer`
   ADD PRIMARY KEY (`email`);
 
 --
--- Indexes for table `riwayat`
+-- Indeks untuk tabel `riwayat`
 --
 ALTER TABLE `riwayat`
   ADD PRIMARY KEY (`id_history`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `riwayat`
+-- AUTO_INCREMENT untuk tabel `riwayat`
 --
 ALTER TABLE `riwayat`
   MODIFY `id_history` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
