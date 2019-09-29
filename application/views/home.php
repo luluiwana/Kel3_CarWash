@@ -229,14 +229,13 @@
                 <div class="wrapper">
                   <div class="testimonial">
                     <p class="text">
-                      <i class="icon-quote-left icon-48"></i> There are many variations of passages of randomised words which don't look even slightly believable. You need to be sure there isn't anything embarrassing of text.
+                      <i class="icon-quote-left icon-48"></i> Cuci mobil disini memang The Best! Hasilnya bersih dan cepat sekali.
                     </p>
                     <div class="author">
                       <img src="img/dummies/testimonial-author1.png" class="img-circle bordered" alt="" />
                       <p class="name">
-                        Tom Shaun Dealova
+                        Roni Ronana
                       </p>
-                      <span class="info">MBC Entertainment, <a href="#">www.sitename.com</a></span>
                     </div>
                   </div>
                 </div>
@@ -245,14 +244,13 @@
                 <div class="wrapper">
                   <div class="testimonial">
                     <p class="text">
-                      <i class="icon-quote-left icon-48"></i> There are many variations of passages of randomised words which don't look even slightly believable. You need to be sure there isn't anything embarrassing of text.
+                      <i class="icon-quote-left icon-48"></i> Saya sudah 45 tahun berlangganan cuci motor disini. Wah hasilnya memuaskan sekali. Saya rekomendasikan catwash kepada anak cucu saya
                     </p>
                     <div class="author">
                       <img src="img/dummies/testimonial-author1.png" class="img-circle bordered" alt="" />
                       <p class="name">
-                        Tom Shaun Dealova
+                        Bejo Wijaya
                       </p>
-                      <span class="info">MBC Entertainment, <a href="#">www.sitename.com</a></span>
                     </div>
                   </div>
                 </div>
@@ -263,14 +261,13 @@
                 <div class="wrapper">
                   <div class="testimonial">
                     <p class="text">
-                      <i class="icon-quote-left icon-48"></i> There are many variations of passages of randomised words which don't look even slightly believable. You need to be sure there isn't anything embarrassing of text.
+                      <i class="icon-quote-left icon-48"></i> Cuma di catwash saya diingatkan mencuci kendaraan saya. Catwash selalu tahu kapan saya butuh mencuci mobil saya. Maklum saya kan orangnya pelupa
                     </p>
                     <div class="author">
                       <img src="img/dummies/testimonial-author1.png" class="img-circle bordered" alt="" />
                       <p class="name">
-                        Tom Shaun Dealova
+                        Tomas Jeri
                       </p>
-                      <span class="info">MBC Entertainment, <a href="#">www.sitename.com</a></span>
                     </div>
                   </div>
                 </div>
@@ -279,52 +276,19 @@
                 <div class="wrapper">
                   <div class="testimonial">
                     <p class="text">
-                      <i class="icon-quote-left icon-48"></i> There are many variations of passages of randomised words which don't look even slightly believable. You need to be sure there isn't anything embarrassing of text.
+                      <i class="icon-quote-left icon-48"></i> Kualitasnya TOP! Pelayanan ramah dan hasilnya nggak perlu diragukan lagi
                     </p>
                     <div class="author">
                       <img src="img/dummies/testimonial-author1.png" class="img-circle bordered" alt="" />
                       <p class="name">
-                        Tom Shaun Dealova
+                        Dea Lova
                       </p>
-                      <span class="info">MBC Entertainment, <a href="#">www.sitename.com</a></span>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="row">
-              <div class="span6">
-                <div class="wrapper">
-                  <div class="testimonial">
-                    <p class="text">
-                      <i class="icon-quote-left icon-48"></i> There are many variations of passages of randomised words which don't look even slightly believable. You need to be sure there isn't anything embarrassing of text.
-                    </p>
-                    <div class="author">
-                      <img src="img/dummies/testimonial-author1.png" class="img-circle bordered" alt="" />
-                      <p class="name">
-                        Tom Shaun Dealova
-                      </p>
-                      <span class="info">MBC Entertainment, <a href="#">www.sitename.com</a></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="span6">
-                <div class="wrapper">
-                  <div class="testimonial">
-                    <p class="text">
-                      <i class="icon-quote-left icon-48"></i> There are many variations of passages of randomised words which don't look even slightly believable. You need to be sure there isn't anything embarrassing of text.
-                    </p>
-                    <div class="author">
-                      <img src="img/dummies/testimonial-author1.png" class="img-circle bordered" alt="" />
-                      <p class="name">
-                        Tom Shaun Dealova
-                      </p>
-                      <span class="info">MBC Entertainment, <a href="#">www.sitename.com</a></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            
             </div>
           </div>
         </div>
