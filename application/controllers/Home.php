@@ -168,6 +168,16 @@ class Home extends CI_Controller {
 	$this->load->view('faq');
 	}
 	
+	public function e404(){
+		if($this->session->userdata('email_sesi')=="adminku"){
+		$this->load->view('headeradmin');
+	}
+	else{
+		$this->load->view('header');
+	}
+	$this->load->view('error');
+	}
+	
 	public function feedback(){
 	if($this->session->userdata('email_sesi')=="adminku"){
 		$this->load->view('headeradmin');

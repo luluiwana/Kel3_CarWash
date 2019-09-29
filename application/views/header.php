@@ -247,7 +247,7 @@
                       <a href="http://localhost/catwash/">Home <i></i></a>
                     </li>
                     <li class="dropdown">
-                      <a href="http://localhost/catwash/home/feedback">Feedback<i ></i></a>
+                      <a href="http://localhost/catwash/home/feedback">Review<i ></i></a>
                       <ul class="dropdown-menu">
                         
                       </ul>

@@ -163,7 +163,7 @@
               <div class="span3">
                 <div class="box aligncenter">
                   <div class="aligncenter icon">
-                    <i class="icon-briefcase icon-circled icon-64 active"></i>
+                    <b class=" icon-circled icon-64 active">1</b>
                   </div>
                   <div class="text">
                     <h6>Cuci Manual</h6>
@@ -177,7 +177,7 @@
               <div class="span3">
                 <div class="box aligncenter">
                   <div class="aligncenter icon">
-                    <i class="icon-desktop icon-circled icon-64 active"></i>
+                    <b class=" icon-circled icon-64 active">2</b>
                   </div>
                   <div class="text">
                     <h6>Cuci Hidrolik</h6>
@@ -191,7 +191,7 @@
               <div class="span3">
                 <div class="box aligncenter">
                   <div class="aligncenter icon">
-                    <i class="icon-beaker icon-circled icon-64 active"></i>
+                    <b class=" icon-circled icon-64 active">3</b>
                   </div>
                   <div class="text">
                     <h6>Mesin Otomatis</h6>
@@ -205,7 +205,7 @@
               <div class="span3">
                 <div class="box aligncenter">
                   <div class="aligncenter icon">
-                    <i class="icon-coffee icon-circled icon-64 active"></i>
+                    <b class=" icon-circled icon-64 active">4</b>
                   </div>
                   <div class="text">
                     <h6>Tenaga Robot</h6>
