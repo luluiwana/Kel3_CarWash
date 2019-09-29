@@ -249,7 +249,7 @@
                       <a href="http://localhost/catwash/home/riwayat">Riwayat Customer<i ></i></a>
                     </li>
 					<li class="dropdown">
-                      <a href="#">Feedback<i ></i></a>
+                      <a href="http://localhost/catwash/home/feedback_admin">Feedback<i ></i></a>
                     </li>
                     <li class="dropdown">
                       <a href="http://localhost/catwash/home/chat">Chat<i ></i></a>

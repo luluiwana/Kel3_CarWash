@@ -168,5 +168,22 @@ class Home extends CI_Controller {
 	$this->load->view('faq');
 	}
 	
+	public function feedback(){
+	if($this->session->userdata('email_sesi')=="adminku"){
+		$this->load->view('headeradmin');
+		$this->load->view('feedbackadmin');
+	}
+	elseif(!$this->session->userdata('email_sesi')){
+		$this->load->view('header');
+		$this->load->view('feedbackgagal');
+		
+	}
+	else{
+		$this->load->view('header');
+		$this->load->view('feedback');
+	}
+	
+	}
+	
 	
 }
