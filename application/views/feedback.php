@@ -60,22 +60,57 @@ form{
 				<div class="control-group">
                     <label class="control-label" for="">E-Mail</label>
                     <div class="controls">
-                       <input class="form-control"  type="text"  required name="email" placeholder="E-mail" disabled value="<?php echo $this->session->userdata('email_sesi');?>">
+                       <input class="form-control"  type="text"  required name="email" placeholder="E-mail" value="<?php echo $this->session->userdata('email_sesi');?>">
                     </div>
                   </div>
 				  
 				  <div class="control-group">
                     <label class="control-label" for="">Kualitas Cucian</label>
                     <div class="controls">
-                        <input type="range" name="kualitas" min="1" max="5" class="slider"> 
+                        <input type="range" value="3" name="kualitas" min="1" max="5" class="slider"> 
                     </div>
                   </div>
 				  
 			
-                  </div><div class="control-group">
-                    <label class="control-label" for="">Kualitas Cucian</label>
+                  <div class="control-group">
+                    <label class="control-label" for="">Lama Pencucian</label>
                     <div class="controls">
-                        <input type="range" name="kualitas" min="1" max="5" class="slider"> 
+                        <input type="range" value="3" name="lama" min="1" max="5" class="slider"> 
+                    </div>
+                  </div>
+				  
+				   <div class="control-group">
+                    <label class="control-label" for="">Minuman yang Disediakan</label>
+                    <div class="controls">
+                        <input type="range" value="3" name="minuman" min="1" max="5" class="slider"> 
+                    </div>
+                  </div>
+				  
+				  <div class="control-group">
+                    <label class="control-label" for="">Karyawan Catwash</label>
+                    <div class="controls">
+                        <input type="range" value="3" name="karyawan" min="1" max="5" class="slider"> 
+                    </div>
+                  </div>
+				  
+				 <div class="control-group">
+                    <label class="control-label" for="">Lingkungan</label>
+                    <div class="controls">
+                        <input type="range" value="3" name="lingkungan" min="1" max="5" class="slider"> 
+                    </div>
+                  </div>
+				  
+				  <div class="control-group">
+                    <label class="control-label" for="">Harga</label>
+                    <div class="controls">
+                        <input type="range" value="3" name="harga" min="1" max="5" class="slider"> 
+                    </div>
+                  </div>
+				  
+				  <div class="control-group">
+                    <label class="control-label" for="">Kritik dan Saran</label>
+                    <div class="controls">
+                        <textarea placeholder="Bagaimana komentar Anda mengenai Catwash Carwash?" name="note"> </textarea>
                     </div>
                   </div>
 				 

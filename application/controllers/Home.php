@@ -60,8 +60,7 @@ class Home extends CI_Controller {
 	public function logout()
 	{
 		$this->session->sess_destroy();
-		$this->load->view('header');
-		$this->load->view('home');
+		redirect("http://localhost/catwash/", 'refresh'); 
 
 	}
 
@@ -94,8 +93,28 @@ class Home extends CI_Controller {
 		$this->load->view('chat');
 
 	}
+	public function addfeedback(){
+		 $data = array(
+	'email' => $this->input->post('email'),
+	'kualitas' => $this->input->post('kualitas'),
+	'lama' => $this->input->post('lama'),
+	'minuman' => $this->input->post('minuman'),
+	'karyawan' => $this->input->post('karyawan'),
+	'lingkungan' => $this->input->post('lingkungan'),
+	'harga' => $this->input->post('harga'),
+	'note' => $this->input->post('note')
+	);
+	$this->db->insert('feedback', $data);
+	$this->load->view('header');
+	$this->load->view('home');
+	}
 	public function add(){
 	 $data = array(
+	'email' => $this->input->post('email'),
+	'paket' => $this->input->post('paket'),
+	'jenis_kendaraan' => $this->input->post('jenis_kendaraan'),
+	'no_plat' => $this->input->post('no_plat')
+	); $data = array(
 	'email' => $this->input->post('email'),
 	'paket' => $this->input->post('paket'),
 	'jenis_kendaraan' => $this->input->post('jenis_kendaraan'),
@@ -114,7 +133,7 @@ class Home extends CI_Controller {
 		foreach($query->result() as $row){
 			$selisih = $row->days;
 		}
-		$this->db->query("UPDATE customer SET periode=$selisih WHERE email='$email'");
+		$this->db->query("UPDATE customer SET periode='$selisih' WHERE email='$email'");
 	}
 	elseif($jml>1){
 		$query=$this->db->query("SELECT DATEDIFF(CURRENT_DATE, waktu_datang) AS days FROM riwayat WHERE email='$email' ORDER BY id_history DESC LIMIT 1 ");
