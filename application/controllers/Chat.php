@@ -14,8 +14,21 @@ class Chat extends CI_Controller {
 	function tambah_chat()
 	{
 		$this->load->model('m_chat');
-		$string = $this->input->post('teks');
-		$data = $this->m_chat->input_chat($string);
+		$M1 = $this->m_chat->get_all();
+
+
+		$waktu = time();
+		$data = array(
+			'chat_id' => "123",
+			'user_id' => "123",
+			'pesan' => $this->input->post('pesan'),
+			'waktu' => date("h:i",$waktu),
+			'status' => "1"
+		);
+
+		$this->db->insert('chatting', $data);
+
+		$this->load->view('header');
 		$this->load->view('chat',$data);
 	}
 }
