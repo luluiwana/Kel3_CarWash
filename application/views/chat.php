@@ -88,32 +88,6 @@ $waktu = time();
 					?>
 				</div>
 			</div>
-			<!-- Guna Penjawab -->
-
-
-
-
-
-			<!-- Guna Penanya -->
-
-			<!-- <?php foreach ($ngechat as $key => $value): ?>
-				<div id="tanya" class="row" style="text-align: right;">
-					<div class="col-md-3">
-						<?php echo $value->pesan; ?>
-						<img src="http://img.clipartlook.com/customer-clipart-cartoon-female-customer-service-customer-service-service-communication-png-image-and-clipart-551.jpg">
-					</div>
-					<div class="col-md-auto" style="margin-right: 100px;">
-						<?php
-						echo $value->waktu;
-						?>
-					</div>
-				</div>
-				<?php endforeach ?> -->
-
-				<!-- Guna Penanya -->
-
-
-
 
 				<!-- Spawn Q -->
 				<div id="hasil">
@@ -121,19 +95,39 @@ $waktu = time();
 				</div>
 				<!-- Spawn Q -->
 
+
+				<?php 
+				$this->load->model('m_chat');
+				$data = $this->m_chat->get_all();
+
+				foreach ($data->result() as $key => $value): ?>
+					<div id="tanya" class="row" style="text-align: right;">
+						<div class="col-md-3">
+							<?php echo $value->pesan; ?>
+							<img src="http://img.clipartlook.com/customer-clipart-cartoon-female-customer-service-customer-service-service-communication-png-image-and-clipart-551.jpg">
+						</div>
+						<div class="col-md-auto" style="margin-right: 100px;">
+
+						</div>
+					</div>
+				<?php endforeach ?>
+
+					<div id="hasil">
+						
+					</div>
+
 			</div>
 			<div class="card-footer">
-				<input type="text" name="pesan" id="pesan">
-				<button id="kirim" class="btn btn-md btn-success">
-					KIRIM
-				</button>
+			<form method="POST" action="<?php echo base_url();?>chat/tambah_chat">
+					<input type="text" name="pesan" id="pesan">
+					<button id="kirim" class="btn btn-md btn-success" value="submit">
+						KIRIM
+					</button>
+			</form>
 			</div>
 		</div>
 	</section>
 	<script type="text/javascript">
-
-		// var html_awal = '<div id="tanya" class="row" style="text-align: right;"><div class="col-md-3">';
-		// var html_akhir = '<img src="http://img.clipartlook.com/customer-clipart-cartoon-female-customer-service-customer-service-service-communication-png-image-and-clipart-551.jpg"></div><div class="col-md-auto" style="margin-right: 100px;">'+<?php echo date("h:i",$waktu); ?>+'</div></div>';
 
 		$(document).ready(function() {
 
@@ -145,6 +139,7 @@ $waktu = time();
 			var waktu = dt.getHours()+":"+dt.getMinutes();
 
 			kirim.click(function(){
+
 				hasil.append('<div id="tanya" class="row" style="text-align: right;"><div class="col-md-3">'+pesan.val()+'<img src="http://img.clipartlook.com/customer-clipart-cartoon-female-customer-service-customer-service-service-communication-png-image-and-clipart-551.jpg"></div><div class="col-md-auto" style="margin-right: 100px;">'+waktu+'</div></div>');
 			})
 		})
